@@ -3,15 +3,25 @@ package models;
 import java.util.List;
 
 public class PlotPoint {
+
+    String StoryBoardId;
     Genre genre;
     List<Event> events;
 
     List<Character> characters;
 
+    public String getStoryBoardId() {
+        return StoryBoardId;
+    }
+
+    public void setStoryBoardId(String storyBoardId) {
+        StoryBoardId = storyBoardId;
+    }
+
     TimePeriod timeperiod;
 
     Setting setting;
-    public PlotPoint(Genre genre, List<Event> events, List<Character> characters, TimePeriod timePeriod, Setting setting){};
+    public PlotPoint(Genre genre, List<Event> events, List<Character> characters, TimePeriod timePeriod, Setting setting, String StoryBoardId){};
 
     public Genre getGenre() {
         return genre;

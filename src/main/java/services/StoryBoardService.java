@@ -1,5 +1,6 @@
 package services;
 
+import jakarta.persistence.EntityNotFoundException;
 import models.StoryBoard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,16 @@ public class StoryBoardService {
         return storyBoardRepo.findAll();
     }
 
-    public Optional<StoryBoard> getStoryBoardById(Integer id) {
-        return storyBoardRepo.findById(id);
+    public StoryBoard getStoryBoardById(String id) {
+        Optional<StoryBoard> storyBoardOptional = storyBoardRepo.findById(id);
+        if (storyBoardOptional.isEmpty()) {
+            throw new EntityNotFoundException(id);
+        }
+            return storyBoardOptional.get();
+
+    }
+
+    public StoryBoard createNewStoryBoard(StoryBoard storyBoard) {
+        return storyBoardRepo.save(storyBoard);
     }
 }
