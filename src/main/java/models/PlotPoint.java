@@ -10,17 +10,11 @@ public class PlotPoint {
 
     List<Character> characters;
 
-    public String getStoryBoardId() {
-        return StoryBoardId;
-    }
-
-    public void setStoryBoardId(String storyBoardId) {
-        StoryBoardId = storyBoardId;
-    }
-
     TimePeriod timeperiod;
 
     Setting setting;
+
+    public PlotPoint(){};
     public PlotPoint(Genre genre, List<Event> events, List<Character> characters, TimePeriod timePeriod, Setting setting, String StoryBoardId){};
 
     public Genre getGenre() {
@@ -58,4 +52,12 @@ public class PlotPoint {
     }
 
     public void setSetting(Setting setting) {this.setting = setting;};
+    public String getStoryBoardId() {
+        return StoryBoardId;
+    }
+
+    public void setStoryBoardId(String storyBoardId) {
+        StoryBoardId = storyBoardId;
+    }
+
 }
