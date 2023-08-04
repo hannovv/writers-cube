@@ -1,1 +1,32 @@
-<p>storyboard works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card bg-dark my-5">
+          <div class="card-body">
+            <h2 class="card-title text-center text-white py-3">{{storyboard.title}}</h2>
+            <h2 class="card-title text-center text-white py-3">{{storyboard.description}}</h2>
+          </div>
+        </div>
+        
+        <form (ngSubmit)="onSubmit()" #plotpointForm="ngForm">
+          <div class="form-group">
+            <label for="description">description</label>
+            <input type="text" [(ngModel)]="plotpoint.description" 
+              class="form-control" 
+              id="description" 
+              name="description" 
+              placeholder="Enter plot summary">
+          </div>
+          <a (click)= "onSubmit()" class="btn btn-info">Submit</a>
+          </form>
+       
+       
+          <div class="plotpoint-list" >
+          <div class="plotpoint-box text-center" *ngFor="let plotpoint of plotpoints">{{plotpoint.description}}<svg width="10" height="50">
+        </svg></div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
