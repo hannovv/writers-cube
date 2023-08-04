@@ -49,4 +49,13 @@ public class PlotPointDTO {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "PlotPointDTO{" +
+                "id='" + id + '\'' +
+                ", storyBoardId='" + storyBoardId + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

@@ -1,20 +1,28 @@
 package com.writers.cube.writerscube.chatGPT;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChatRequest {
 
+    @JsonProperty
     private String model;
+
+    @JsonProperty
     private List<Message> messages;
-    private int n;
-    private double temperature;
+//    private int n;
+//    private double temperature;
 
     public ChatRequest(String model, String prompt) {
         this.model = model;
 
         this.messages = new ArrayList<>();
         this.messages.add(new Message("user", prompt));
+    }
+
+    public ChatRequest() {
     }
 
     public String getModel() {
@@ -33,20 +41,28 @@ public class ChatRequest {
         this.messages = messages;
     }
 
-    public int getN() {
-        return n;
-    }
+//    public int getN() {
+//        return n;
+//    }
+//
+//    public void setN(int n) {
+//        this.n = n;
+//    }
 
-    public void setN(int n) {
-        this.n = n;
-    }
+//    public double getTemperature() {
+//        return temperature;
+//    }
+//
+//    public void setTemperature(double temperature) {
+//        this.temperature = temperature;
+//    }
 
-    public double getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    @Override
+    public String toString() {
+        return "ChatRequest{" +
+                "model='" + model + '\'' +
+                ", messages=" + messages +
+                '}';
     }
 }
 

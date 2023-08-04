@@ -5,6 +5,7 @@ import { Storyboardservice } from 'src/app/services/storyboard.service';
 import { PlotpointService } from 'src/app/services/plotpoint.service';
 import { Plotpoint } from 'src/app/models/plotpoint';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable,Subscription, interval  } from 'rxjs';
 
 @Component({
   selector: 'app-storyboard',
@@ -30,6 +31,16 @@ onSubmit() : void{
   this.plotpoint.id = Math.random().toString();
   this.plotpoint.storyBoardId = this.storyboard.id;
   this.plotPointService.addNewPlotPoint(this.plotpoint);
+  this.plotPointService.findPlotPointByStoryboardId(this.storyboard.id).subscribe(data => {
+    this.plotpoints = data;
+  });
+
+}
+onClick() {
+   this.plotPointService.generateRandomPlotpoint(this.storyboard);
+   this.plotPointService.findPlotPointByStoryboardId(this.storyboard.id).subscribe(data => {
+    this.plotpoints = data;
+  });
 }
 ngOnInit() {
 
@@ -46,13 +57,12 @@ ngOnInit() {
     this.plotpoints = data;
   });
 
-}
+   };
+  }
 
 
 
 
 
-
-}
 
 
