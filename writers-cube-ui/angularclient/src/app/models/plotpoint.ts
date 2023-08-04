@@ -1,12 +1,12 @@
 export class Plotpoint {
 
   id : string;
-  storyboardId : string;
+  storyBoardId : string;
   description : string;
 
   constructor(id: string, storyboardId: string, description: string) {
     this.id = id;
-    this.storyboardId = storyboardId;
+    this.storyBoardId = storyboardId;
     this.description = description;
   }
 }

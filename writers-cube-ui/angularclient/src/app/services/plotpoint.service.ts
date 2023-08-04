@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Plotpoint } from '../models/plotpoint';
 import { Observable } from 'rxjs';
@@ -20,8 +20,12 @@ export class PlotpointService {
   }
 
   public addNewPlotPoint(plotpoint : Plotpoint) {
-    console.log("calling add new plotpoint")
-    return this.http.post<Plotpoint>(this.plotPointUrl, plotpoint);
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(plotpoint);
+    console.log("calling add new plotpoint");
+    const req = this.http.post<Plotpoint>(this.plotPointUrl,body,{'headers':headers});
+    req.subscribe();
+
   }
 
 

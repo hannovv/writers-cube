@@ -16,7 +16,7 @@ export class StoryboardComponent implements OnInit {
 
 
 
-plotpoint : Plotpoint = {id: '', storyboardId: '', description: ''}
+plotpoint : Plotpoint = {id: '', storyBoardId: '', description: ''}
 storyboard : Storyboard = {id: '', title: '', description: ''};
 plotpoints : Plotpoint[] = [];
 plotpointForm : FormGroup = this.formBuilder.group({description: ''});
@@ -27,9 +27,8 @@ constructor(private router : Router, private formBuilder: FormBuilder, private p
 
 
 onSubmit() : void{
-  console.log(this.plotpoint.description);
-  this.plotpoint.id = Math.floor((Math.random()*6)+1).toString();
-  this.plotpoint.storyboardId = this.storyboard.id;
+  this.plotpoint.id = Math.random().toString();
+  this.plotpoint.storyBoardId = this.storyboard.id;
   this.plotPointService.addNewPlotPoint(this.plotpoint);
 }
 ngOnInit() {
