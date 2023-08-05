@@ -1,0 +1,207 @@
+/* 
+.html { 
+  background-image: 'https://www.etoffe.com/307776-thickbox_default/menagerie-toile-wallpaper-rifle-paper-co.jpg';
+}
+.body {
+    background-color: black;
+    width: 1000px;
+    height: 100%;
+    background-image: 'https://www.etoffe.com/307776-thickbox_default/menagerie-toile-wallpaper-rifle-paper-co.jpg';
+}
+
+
+
+
+
+   */
+
+  .body {
+    background-color: rgba(127, 255, 212, 0.024);
+    height: 3000px;
+    background-image: url('https://www.etoffe.com/307776-thickbox_default/menagerie-toile-wallpaper-rifle-paper-co.jpg');
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+  .card-body {
+    position: relative;
+    border-radius: 40px;
+    width:100%;
+    height:450px;
+    border:15px solid transparent; 
+    outline:2px solid #000; 
+    outline-offset:-10px; 
+    background:
+      linear-gradient(#000 0 0) top,
+      linear-gradient(#000 0 0) left,
+      linear-gradient(#000 0 0) bottom,
+      linear-gradient(#000 0 0) right;
+    background-size:200% 2px,2px 200%; 
+    background-origin:padding-box;
+    background-repeat:no-repeat;
+    float: left;
+    background-color: rgba(60, 113, 113, 0.908);
+    background-image: 'https://www.etoffe.com/307776-thickbox_default/menagerie-toile-wallpaper-rifle-paper-co.jpg';
+  }
+
+  .card-title {
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: monaco;
+    color: rgba(142, 171, 228);
+    border:15px solid transparent; 
+    outline:2px solid #000000; 
+    outline-offset:-10px; 
+    background:
+      linear-gradient(#000 0 0) top,
+      linear-gradient(#000 0 0) left,
+      linear-gradient(#000 0 0) bottom,
+      linear-gradient(#000 0 0) right;
+    background-size:200% 2px,2px 200%; 
+    background-origin:padding-box;
+    background-repeat:no-repeat;
+  }
+
+  .btn {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(142, 171, 228);
+    background-color: rgba(19, 19, 56, 0.445);
+    border-radius: 17px;
+    
+  }
+  .btn:hover {
+    color:rgb(214, 214, 238);
+    background-color: rgba(0, 0, 0, 0.308);
+  }
+
+  .list {
+    margin-top: 215px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display:inline-block;
+    border:15px solid transparent; 
+    outline:2px solid #000; 
+    outline-offset:-10px; 
+    background:
+      linear-gradient(#0a053095 0 0) top,
+      linear-gradient(#0a053095 0 0) left,
+      linear-gradient(#0a053095 0 0) bottom,
+      linear-gradient(#0a053095 0 0) right;
+    background-size:200% 2px,2px 200%; 
+    background-origin:padding-box;
+    background-repeat:no-repeat;
+}
+
+.wrap {
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.cube {
+	position: relative;
+	width: 275px;
+	transform-style: preserve-3d;
+  
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+  margin: 10px;
+  display:inline-block;
+  border:15px solid transparent; 
+  outline:4px solid #072f2b; 
+  outline-offset:-10px; 
+  background:
+    linear-gradient(#73b18f 0 0) top,
+    linear-gradient(#544fd5 0 0) left,
+    linear-gradient(#73b18f 0 0) bottom,
+    linear-gradient(#544fd5 0 0) right;
+  background-size:200% 2px,2px 200%; 
+  background-origin:padding-box;
+  background-repeat:no-repeat;
+}
+
+
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+  color: white;
+  background-color: #0000004f;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+}
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+  color: white;
+  background-color: #7c331d6e;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+  color: white;
+  background-color: #0000004f;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+  color: white;
+  background-color: #110c0ccc;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+
+}
+.front {
+	transform: translateZ(100px);
+  color: rgb(34, 29, 48);
+  background-color: #0000004f;
+  border-radius: 10px;
+  border-color: #11022b;
+  font-size: 40px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  float: right;
+}
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+  color: rgb(194, 203, 244);
+  background-color: #0000007d;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 27px;
+  float: right;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+
+.cube {
+	animation: spin 25s infinite linear;
+}
