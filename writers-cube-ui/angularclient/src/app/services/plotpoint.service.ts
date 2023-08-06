@@ -12,11 +12,13 @@ export class PlotpointService {
 
   private plotPointUrl: string;
   private chatUrl: string;
+  private url: string;
   storyboardprompt: Storyboardprompt = {prompt: '', storyBoardId: ''};
 
   constructor(private http: HttpClient) {
     this.plotPointUrl = 'http://localhost:8080/plotpoints'
     this.chatUrl = 'http://localhost:8080/chat'
+    this.url = 'http://localhost:8080/'
 
   }
 
@@ -27,8 +29,16 @@ export class PlotpointService {
   public addNewPlotPoint(plotpoint : Plotpoint) {
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(plotpoint);
-    console.log("calling add new plotpoint");
+    console.log(plotpoint.description);
     const req = this.http.post<Plotpoint>(this.plotPointUrl,body,{'headers':headers});
+    req.subscribe();
+    console.log(this.http.post<Plotpoint>(this.plotPointUrl,body,{'headers':headers}));
+
+  }
+
+  public deletePlotPoint(plotpoint : Plotpoint) {
+    console.log("deleting plotpoint with id " + plotpoint.id);
+    const req = this.http.delete(this.url + plotpoint.id);
     req.subscribe();
 
   }

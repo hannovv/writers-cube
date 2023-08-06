@@ -6,9 +6,12 @@ import com.writers.cube.writerscube.chatGPT.StoryBoardPrompt;
 import com.writers.cube.writerscube.models.PlotPoint;
 import com.writers.cube.writerscube.models.PlotPointDTO;
 import com.writers.cube.writerscube.models.StoryBoard;
+import org.apache.catalina.filters.ExpiresFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.writers.cube.writerscube.services.PlotPointService;
 import com.writers.cube.writerscube.services.StoryBoardService;
@@ -16,6 +19,8 @@ import org.springframework.web.client.RestTemplate;
 
 
 import java.util.List;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -70,10 +75,6 @@ public class Controller {
         return response.getChoices().get(0).getMessage().getContent();
     }
 
-    @RequestMapping("/")
-    public String helloWorld() {
-        return "Hello World";
-    }
 
     @GetMapping("/storyboards")
     public List<StoryBoard> getAllStoryBoards(){
@@ -103,6 +104,14 @@ public class Controller {
     PlotPointDTO createNewPlotPoint(@RequestBody PlotPointDTO plotPoint) {
         System.out.println("adding new plotpoint");
         System.out.println(plotPoint.toString());
+        System.out.println(plotPointService.createNewPlotPoint(plotPoint).toString());
         return plotPointService.createNewPlotPoint(plotPoint);
+    }
+
+    @DeleteMapping("/{ID}")
+    ResponseEntity<String> deletePlotPointById(@PathVariable("ID") String ID) {
+        System.out.println("deleting plotpoint with id" + ID);
+         plotPointService.deletePlotPoint(ID);
+         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

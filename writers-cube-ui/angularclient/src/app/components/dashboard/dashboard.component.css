@@ -120,13 +120,13 @@
   margin: 10px;
   display:inline-block;
   border:15px solid transparent; 
-  outline:4px solid #072f2b; 
+  outline:4px solid #261f62; 
   outline-offset:-10px; 
   background:
-    linear-gradient(#73b18f 0 0) top,
-    linear-gradient(#544fd5 0 0) left,
-    linear-gradient(#73b18f 0 0) bottom,
-    linear-gradient(#544fd5 0 0) right;
+    linear-gradient(#d39e14 0 0) top,
+    linear-gradient(#d39e14 0 0) left,
+    linear-gradient(#d39e14 0 0) bottom,
+    linear-gradient(#d39e14 0 0) right;
   background-size:200% 2px,2px 200%; 
   background-origin:padding-box;
   background-repeat:no-repeat;

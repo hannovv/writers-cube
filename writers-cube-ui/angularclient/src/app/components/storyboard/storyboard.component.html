@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="card bg-dark my-5">
@@ -7,7 +7,6 @@
             <h2 class="card-title text-center text-white py-3">{{storyboard.description}}</h2>
           </div>
         </div>
-        
         <form (ngSubmit)="onSubmit()" #plotpointForm="ngForm">
           <div class="form-group">
             <label for="description">New plotpoint</label>
@@ -19,13 +18,10 @@
           </div>
           <a (click)= "onSubmit()" class="btn btn-info">Submit</a>
           </form>
-
           <div class = "container">
             <h4 class="card-title text center">Writer's block?</h4>
             <a (click)="onClick()" class="btn btn-info">Generate a random plotpoint</a>
           </div>
-       
-       
           <div class="plotpoint-list" >
           <div class="plotpoint-box text-center" *ngFor="let plotpoint of plotpoints">{{plotpoint.description}}<svg width="10" height="50">
         </svg></div>
@@ -33,5 +29,51 @@
         <router-outlet></router-outlet>
       </div>
     </div>
+  </div> -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<body>
+  <div class="container">
+    <div class="card-body">
+      <h2 class="card-title text-center">{{ storyboard.title }}</h2>
+      <h2 class="card-title text-center">{{ storyboard.description }}</h2>
+  
+
+      
+      <div class="wrapper">
+        <div class="table">
+          <ol>
+            <li *ngFor="let plotpoint of plotpoints">
+              <input (click)="delete(plotpoint)" class = "img" type="image"  id="saveform" src='https://tse4.mm.bing.net/th?id=OIP.AXfaIlgoW0cTQUZHGvLWogHaHa&pid=Api' />{{plotpoint.description}}</li>
+          </ol>
+          <form (ngSubmit)="onSubmit()" #plotpointForm="ngForm">
+            <div class="form-group">
+              <label for="description">New plotpoint</label>
+              <input type="text" [(ngModel)]="plotpoint.description" 
+                class="form-control" 
+                id="description" 
+                name="description" 
+                placeholder="Enter plot summary">
+            </div>
+            <a (click)= "onSubmit()" class="btn btn-info">Submit</a>
+            </form>
+        </div>
+      </div>
+
+      <div class = "block-wrapper">
+        <h4 class="text center">Writer's block?</h4>
+        <a (click)="onClick()" class="btn btn-info">Generate a random plotpoint</a>
+      </div>
+
+
+
+    </div>
   </div>
+  <router-outlet></router-outlet>
+</body>
+
 

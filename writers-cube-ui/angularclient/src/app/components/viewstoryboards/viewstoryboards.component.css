@@ -1,0 +1,157 @@
+ body {
+    background-color: rgba(127, 255, 212, 0.024);
+    height: 3000px;
+    background-image: url('https://www.etoffe.com/307776-thickbox_default/menagerie-toile-wallpaper-rifle-paper-co.jpg');
+  }
+
+  .card-body {
+    position: relative;
+    border-radius: 40px;
+    width:100%;
+    height:700px;
+    border:15px solid transparent; 
+    outline:2px solid #000; 
+    outline-offset:-10px; 
+    background:
+      linear-gradient(#000 0 0) top,
+      linear-gradient(#000 0 0) left,
+      linear-gradient(#000 0 0) bottom,
+      linear-gradient(#000 0 0) right;
+    background-size:200% 2px,2px 200%; 
+    background-origin:padding-box;
+    background-repeat:no-repeat;
+    float: left;
+    background-color: rgba(60, 113, 113, 0.908);
+    flex-direction: column;
+
+  }
+
+  .card-title {
+    margin-top: 50px;
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(193, 210, 246);
+    border:15px solid transparent; 
+    outline:2px solid #000000; 
+    outline-offset:-10px; 
+    background-color: rgb(60, 113, 113);
+    background:
+      linear-gradient(#000 0 0) top,
+      linear-gradient(#000 0 0) left,
+      linear-gradient(#000 0 0) bottom,
+      linear-gradient(#000 0 0) right;
+    background-size:200% 2px,2px 200%; 
+    background-origin:padding-box;
+    background-repeat:no-repeat;
+    flex-direction: column;
+  } 
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  
+  float: left;
+  margin: 40px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(48, 46, 81, 0.757);
+  display: table;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(142, 171, 228);
+  background-color: rgba(19, 19, 56, 0.445);
+  border-radius: 30px;
+  font-size: 20px;
+  color: rgba(142, 171, 228);
+  border:15px solid transparent; 
+  outline:2px solid #d39d1473; 
+  outline-offset:-10px; 
+  background:
+    linear-gradient(#d39d1473 0 0) top,
+    linear-gradient(#d39d1473 0 0) left,
+    linear-gradient(#d39d1473 0 0) bottom,
+    linear-gradient(#d39d1473 0 0) right;
+  background-size:200% 2px,2px 200%; 
+  background-origin:padding-box;
+  background-repeat:no-repeat;
+  flex-direction: column;
+  
+}
+
+
+.row {
+  display: table-row;
+  background: #2559839c;
+  outline: 0.5px solid #000000;
+  
+}
+
+.row.header {
+  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+  font-weight: 900;
+  background: #2559839c;
+ 
+}
+
+.tcell, .scell {
+  padding: 6px 12px;
+  display: table-cell;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(190, 206, 240);
+  background-color: rgba(19, 19, 56, 0.473);
+  border-radius: 10px;
+  font-size: 30px;
+  border:15px solid transparent; 
+  outline:2px solid #000; 
+  outline-offset:-10px; 
+  background:
+    linear-gradient(#000 0 0) top,
+    linear-gradient(#d39e14 0 0) left,
+    linear-gradient(#d39e14 0 0) bottom,
+    linear-gradient(#000 0 0) right;
+  background-size:200% 2px,2px 200%; 
+  background-origin:padding-box;
+  background-repeat:no-repeat;
+  flex-direction: column;
+
+}
+
+.cell, .btn{
+  padding: 6px 12px;
+  display: table-cell;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(189, 207, 240);
+  background-color: rgba(19, 19, 56, 0.445);
+  border-radius: 10px;
+  font-size: 20px;
+  border:15px solid transparent; 
+  outline:2px solid #000000; 
+  outline-offset:-10px; 
+  background:
+    linear-gradient(#000 0 0) top,
+    linear-gradient(#d39e14 0 0) left,
+    linear-gradient(#000 0 0) bottom,
+    linear-gradient(#000 0 0) right;
+  background-size:200% 2px,2px 200%; 
+  background-origin:padding-box;
+  background-repeat:no-repeat;
+  flex-direction: column;
+}
+
+.btn:hover {
+  color:rgb(214, 214, 238);
+  background-color: rgba(0, 0, 0, 0.308);
+}
+
+
+
+
+
+  
+
+
+
+

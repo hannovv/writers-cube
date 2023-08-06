@@ -27,6 +27,14 @@ plotpointForm : FormGroup = this.formBuilder.group({description: ''});
 constructor(private router : Router, private formBuilder: FormBuilder, private plotPointService : PlotpointService, private storyboardservice : Storyboardservice, private route : ActivatedRoute){}
 
 
+delete(plotpoint: Plotpoint) {
+  console.log("deleting plotpoint with id " + plotpoint.id);
+  this.plotPointService.deletePlotPoint(plotpoint);
+  this.plotPointService.findPlotPointByStoryboardId(this.storyboard.id).subscribe(data => {
+    this.plotpoints = data;
+  });
+}
+
 onSubmit() : void{
   this.plotpoint.id = Math.random().toString();
   this.plotpoint.storyBoardId = this.storyboard.id;
