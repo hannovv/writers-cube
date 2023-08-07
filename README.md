@@ -25,7 +25,7 @@ Make sure you have the following installed before running the application:
 -OpenAI API account
 
 Follow these steps to run the applicatin locally:
-1. CLone this repository to your machine:
+1. Clone this repository to your machine:
    ```
    git clone https://github.com/hannovv/writers-cube.git
    ```
