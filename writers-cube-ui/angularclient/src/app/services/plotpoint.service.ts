@@ -13,6 +13,8 @@ export class PlotpointService {
   private plotPointUrl: string;
   private chatUrl: string;
   private url: string;
+  private plotpointstring: string = '';
+  ps: Plotpoint[] = [];
   storyboardprompt: Storyboardprompt = {prompt: '', storyBoardId: ''};
 
   constructor(private http: HttpClient) {
@@ -44,7 +46,12 @@ export class PlotpointService {
 
   public generateRandomPlotpoint(storyboard: Storyboard) {
     const headers = { 'content-type': 'application/json'}
-    this.storyboardprompt.prompt = "write me a 1 sentence summary that is under 255 characters for a plotpoint in a story about " + storyboard.description;
+    this.findPlotPointByStoryboardId(storyboard.id).subscribe(data => {this.ps = data;})
+    for (let i = this.ps.length -1; i > 0; i--) {
+      this.plotpointstring+= ". ";
+      this.plotpointstring+= this.ps[i].description;
+    }
+    this.storyboardprompt.prompt = "write me a 1 sentence plotpoint for a story. It has to be under 230 characters. The story is about " + storyboard.description + ". so far, this has happened in the story: " + this.plotpointstring;
     this.storyboardprompt.storyBoardId = storyboard.id;
     const body= JSON.stringify(this.storyboardprompt);
     console.log("calling generate random plotpoint")

@@ -24,8 +24,7 @@ export class ViewstoryboardsComponent implements OnInit {
     this.router.navigate(['../storyboard']);
 
     this.storyboardservice.findStoryBoardById(event.data.storyboardId).subscribe(result => {
-      console.log(result); // <-- Object is logged properly.
-      this.selectedStoryBoard = result; // Assigning the local @Input variable to the result
+      this.selectedStoryBoard = result; 
     });
   }
 

@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import com.writers.cube.writerscube.services.PlotPointService;
 import com.writers.cube.writerscube.services.StoryBoardService;
 import org.springframework.web.client.RestTemplate;
-
-
 import java.util.List;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -47,12 +45,11 @@ public class Controller {
     @PostMapping("/chat")
     public String chat(@RequestBody StoryBoardPrompt storyBoardPrompt) {
         // create a request
-
-        //separate prompt from storyboardprompt model
+        // separate prompt from storyboardprompt model
         String prompt = storyBoardPrompt.getPrompt();
         ChatRequest request = new ChatRequest(model, prompt);
-//        request.setN(1);
 
+        //request.setN(1);
         // call the API
         System.out.println(request.toString());
         ChatResponse response = restTemplate.postForObject(apiUrl, request, ChatResponse.class);
@@ -82,16 +79,6 @@ public class Controller {
     StoryBoard getStoryBoardByID(@PathVariable("ID") String ID) {
         return storyBoardService.getStoryBoardById(ID);
     }
-//    @PostMapping
-//    StoryBoard createNewStoryBoard(@PathVariable StoryBoard storyBoard) {
-//        return storyBoardService.createNewStoryBoard(storyBoard);
-//    }
-//
-//    @GetMapping
-//    public List<PlotPointDTO> getAllPlotPoints() {
-//        return plotPointService.getAllPlotPoints();
-//    }
-//
     @GetMapping("/plotpoints/{ID}")
     public List<PlotPointDTO> getPlotPointByStoryBoardId(@PathVariable("ID") String ID) {
         return plotPointService.getPlotPointByStoryBoardId(ID);
