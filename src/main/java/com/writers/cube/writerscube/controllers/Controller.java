@@ -3,10 +3,8 @@ package com.writers.cube.writerscube.controllers;
 import com.writers.cube.writerscube.chatGPT.ChatRequest;
 import com.writers.cube.writerscube.chatGPT.ChatResponse;
 import com.writers.cube.writerscube.chatGPT.StoryBoardPrompt;
-import com.writers.cube.writerscube.models.PlotPoint;
 import com.writers.cube.writerscube.models.PlotPointDTO;
 import com.writers.cube.writerscube.models.StoryBoard;
-import org.apache.catalina.filters.ExpiresFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -64,10 +62,9 @@ public class Controller {
         }
 
         //add ChatGPT's response to the plotpoint database
-        PlotPointDTO plotPoint = new PlotPointDTO();
-        plotPoint.setDescription(response.getChoices().get(0).getMessage().getContent());
-        plotPoint.setStoryBoardId(storyBoardPrompt.getStoryBoardId());
-        plotPoint.setId("100");
+        PlotPointDTO plotPoint = new PlotPointDTO(java.util.UUID.randomUUID().toString(),
+                storyBoardPrompt.getStoryBoardId(), response.getChoices().get(0).getMessage().getContent());
+
         plotPointService.createNewPlotPoint(plotPoint);
 
         // return the first response

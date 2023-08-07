@@ -85,6 +85,7 @@
   float: right;
   height: 25px;
   width: 25px;
+  border-radius: 3px;
 }
 
 .block-wrapper  {
@@ -227,6 +228,124 @@ li {
   color:rgb(214, 214, 238);
   background-color: rgba(0, 0, 0, 0.308);
 }
+
+.wrap {
+  margin-top: 40px;
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.cube {
+	position: relative;
+	width: 275px;
+	transform-style: preserve-3d;
+  
+}
+
+.cube:hover {
+  	cursor:pointer;
+}
+
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+  margin: 10px;
+  display:inline-block;
+  border:15px solid transparent; 
+  outline:4px solid #261f62; 
+  outline-offset:-10px; 
+  background:
+    linear-gradient(#d39e14 0 0) top,
+    linear-gradient(#d39e14 0 0) left,
+    linear-gradient(#d39e14 0 0) bottom,
+    linear-gradient(#d39e14 0 0) right;
+  background-size:200% 2px,2px 200%; 
+  background-origin:padding-box;
+  background-repeat:no-repeat;
+}
+
+
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+  color: white;
+  background-color: #0000004f;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+}
+
+
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+  color: white;
+  background-color: #7c331d6e;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+  color: white;
+  background-color: #0000004f;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+  color: white;
+  background-color: #110c0ccc;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 30px;
+  float: right;
+
+}
+.front {
+	transform: translateZ(100px);
+  color: rgb(34, 29, 48);
+  background-color: #0000004f;
+  border-radius: 10px;
+  border-color: #11022b;
+  font-size: 40px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  float: right;
+}
+
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+  color: rgb(194, 203, 244);
+  background-color: #0000007d;
+  border-radius: 10px;
+  border-color: #000;
+  font-size: 24px;
+  float: right;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+
+.cube {
+	animation: spin 10s infinite linear;
+}
+
 
 
 

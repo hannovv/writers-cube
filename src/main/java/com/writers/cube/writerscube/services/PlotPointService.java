@@ -12,6 +12,7 @@ import com.writers.cube.writerscube.repositories.PlotPointRepo;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class PlotPointService {
@@ -51,7 +52,5 @@ public class PlotPointService {
         plotPointRepo.delete(this.findById(id));
     }
 
-//    public PlotElement createNewPlotPoint(String StoryBoardId) {
-//        return new PlotElement();
-//    }
+
 }
