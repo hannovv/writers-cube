@@ -1,37 +1,4 @@
-<!-- <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card bg-dark my-5">
-          <div class="card-body">
-            <h2 class="card-title text-center text-white py-3">{{storyboard.title}}</h2>
-            <h2 class="card-title text-center text-white py-3">{{storyboard.description}}</h2>
-          </div>
-        </div>
-        <form (ngSubmit)="onSubmit()" #plotpointForm="ngForm">
-          <div class="form-group">
-            <label for="description">New plotpoint</label>
-            <input type="text" [(ngModel)]="plotpoint.description" 
-              class="form-control" 
-              id="description" 
-              name="description" 
-              placeholder="Enter plot summary">
-          </div>
-          <a (click)= "onSubmit()" class="btn btn-info">Submit</a>
-          </form>
-          <div class = "container">
-            <h4 class="card-title text center">Writer's block?</h4>
-            <a (click)="onClick()" class="btn btn-info">Generate a random plotpoint</a>
-          </div>
-          <div class="plotpoint-list" >
-          <div class="plotpoint-box text-center" *ngFor="let plotpoint of plotpoints">{{plotpoint.description}}<svg width="10" height="50">
-        </svg></div>
-        </div>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div> -->
-
-  <link
+<link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
@@ -41,63 +8,67 @@
     <div class="card-body">
       <h2 class="card-title text-center">{{ storyboard.title }}</h2>
       <h3 class="card-title2 text-center">{{ storyboard.description }}</h3>
-  
 
-      
       <div class="wrapper">
         <div class="table">
           <ol>
             <li *ngFor="let plotpoint of plotpoints">
-              <input (click)="delete(plotpoint)" class = "img" type="image"  id="saveform" src='https://tse4.mm.bing.net/th?id=OIP.AXfaIlgoW0cTQUZHGvLWogHaHa&pid=Api'>{{plotpoint.description}}</li>
+              <input
+                (click)="delete(plotpoint)"
+                class="img"
+                type="image"
+                id="saveform"
+                src="https://tse4.mm.bing.net/th?id=OIP.AXfaIlgoW0cTQUZHGvLWogHaHa&pid=Api"
+              />{{ plotpoint.description }}
+            </li>
           </ol>
           <form (ngSubmit)="onSubmit(plotpointForm)" #plotpointForm="ngForm">
             <div class="form-group">
-              <label for="description">New plotpoint</label>
-              <input type="text" [(ngModel)]="plotpoint.description" 
-                class="form-control" 
-                id="description" 
-                name="description" 
-                placeholder="Enter plot summary">
+              <label for="description">New plot point</label>
+              <input
+                type="text"
+                [(ngModel)]="plotpoint.description"
+                class="form-control"
+                id="description"
+                name="description"
+                placeholder="Enter plot summary"
+              />
             </div>
-            <a (click)= "onSubmit(plotpointForm)" class="btn btn-info">Submit</a>
-            </form>
+            <a (click)="onSubmit(plotpointForm)" class="btn btn-info">Submit</a>
+          </form>
         </div>
       </div>
-
-      <!-- <div class = "block-wrapper">
-        <h4 class="text center">Writer's block?</h4>
-        <a (click)="onClick()" class="btn btn-info">Generate a random plotpoint</a>
-        
-      </div> -->
 
       <div class="wrap">
-        
-        <div type="button" (click)="onClick()"class="cube">
+        <div type="button" (click)="onClick()" class="cube">
+          <div class="front text-center" style="background-color: #6d73e8">
+            Writer's Block?
+          </div>
 
-          <div class="front text-center" style="background-color:#6d73e8;">Writer's Block?</div>
+          <div class="back text-center" style="background-color: #6d73e8a9">
+            Click the mystic cube to generate a random plot point
+          </div>
 
-          <div class="back text-center" style="background-color:#6d73e8a9;">Click the mystic cube to generate a random plot point</div>
+          <div class="top" style="background-color: #6d73e86e"></div>
 
-          <div class="top" style="background-color:#6d73e86e;"></div>
+          <div class="bottom" style="background-color: #6d73e86e"></div>
 
-          <div class="bottom" style="background-color:#6d73e86e;"></div>
+          <div class="left" style="background-color: #6d73e86e">
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.7bTnuuYQkS_J8QQHehG5bAHaE7&pid=Api"
+              style="height: 100%; width: 100%; opacity: 0.4"
+            />
+          </div>
 
-          <div class="left" style="background-color:#6d73e86e;"><img
-              src='https://tse4.mm.bing.net/th?id=OIP.7bTnuuYQkS_J8QQHehG5bAHaE7&pid=Api'
-              style="height: 100%; width: 100%; opacity: 0.4"></div>
-
-          <div class="right" style="background-color:#6d73e86e;"><img
-              src='https://tse4.mm.bing.net/th?id=OIP.7bTnuuYQkS_J8QQHehG5bAHaE7&pid=Api'
-              style="height: 100%; width: 100%; opacity: 0.4"></div>
+          <div class="right" style="background-color: #6d73e86e">
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.7bTnuuYQkS_J8QQHehG5bAHaE7&pid=Api"
+              style="height: 100%; width: 100%; opacity: 0.4"
+            />
+          </div>
         </div>
-
       </div>
-
-
-
     </div>
   </div>
   <router-outlet></router-outlet>
 </body>
-
-
