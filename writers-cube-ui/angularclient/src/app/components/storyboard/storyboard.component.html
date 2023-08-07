@@ -40,7 +40,7 @@
   <div class="container">
     <div class="card-body">
       <h2 class="card-title text-center">{{ storyboard.title }}</h2>
-      <h2 class="card-title text-center">{{ storyboard.description }}</h2>
+      <h3 class="card-title2 text-center">{{ storyboard.description }}</h3>
   
 
       
@@ -48,9 +48,9 @@
         <div class="table">
           <ol>
             <li *ngFor="let plotpoint of plotpoints">
-              <input (click)="delete(plotpoint)" class = "img" type="image"  id="saveform" src='https://tse4.mm.bing.net/th?id=OIP.AXfaIlgoW0cTQUZHGvLWogHaHa&pid=Api' />{{plotpoint.description}}</li>
+              <input (click)="delete(plotpoint)" class = "img" type="image"  id="saveform" src='https://tse4.mm.bing.net/th?id=OIP.AXfaIlgoW0cTQUZHGvLWogHaHa&pid=Api'>{{plotpoint.description}}</li>
           </ol>
-          <form (ngSubmit)="onSubmit()" #plotpointForm="ngForm">
+          <form (ngSubmit)="onSubmit(plotpointForm)" #plotpointForm="ngForm">
             <div class="form-group">
               <label for="description">New plotpoint</label>
               <input type="text" [(ngModel)]="plotpoint.description" 
@@ -59,7 +59,7 @@
                 name="description" 
                 placeholder="Enter plot summary">
             </div>
-            <a (click)= "onSubmit()" class="btn btn-info">Submit</a>
+            <a (click)= "onSubmit(plotpointForm)" class="btn btn-info">Submit</a>
             </form>
         </div>
       </div>
@@ -76,7 +76,7 @@
 
           <div class="front text-center" style="background-color:#6d73e8;">Writer's Block?</div>
 
-          <div class="back text-center" style="background-color:#6d73e8;">Click the mystic cube to generate a random plotpoint</div>
+          <div class="back text-center" style="background-color:#6d73e8a9;">Click the mystic cube to generate a random plot point</div>
 
           <div class="top" style="background-color:#6d73e86e;"></div>
 

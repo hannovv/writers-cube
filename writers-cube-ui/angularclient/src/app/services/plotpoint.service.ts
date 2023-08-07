@@ -40,12 +40,11 @@ export class PlotpointService {
     console.log("deleting plotpoint with id " + plotpoint.id);
     const req = this.http.delete(this.url + plotpoint.id);
     req.subscribe();
-
   }
 
   public generateRandomPlotpoint(storyboard: Storyboard) {
     const headers = { 'content-type': 'application/json'}
-    this.storyboardprompt.prompt = "write me a 1 sentence summary for a plotpoint in a story about " + storyboard.description;
+    this.storyboardprompt.prompt = "write me a 1 sentence summary that is under 255 characters for a plotpoint in a story about " + storyboard.description;
     this.storyboardprompt.storyBoardId = storyboard.id;
     const body= JSON.stringify(this.storyboardprompt);
     console.log("calling generate random plotpoint")

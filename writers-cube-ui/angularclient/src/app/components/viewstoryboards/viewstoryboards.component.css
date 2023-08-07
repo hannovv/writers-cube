@@ -27,19 +27,17 @@
   }
 
   .card-title {
+    margin-left: 300px;
     margin-top: 50px;
-    font-size: 40px;
+    font-size: 35px;
+    width: 400px;
+    border-radius: 7px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(193, 210, 246);
     border:15px solid transparent; 
-    outline:2px solid #000000; 
+    outline:2px solid #082a25; 
     outline-offset:-10px; 
-    background-color: rgb(60, 113, 113);
-    background:
-      linear-gradient(#000 0 0) top,
-      linear-gradient(#000 0 0) left,
-      linear-gradient(#000 0 0) bottom,
-      linear-gradient(#000 0 0) right;
+    background-color: rgba(31, 57, 57, 0.202);
     background-size:200% 2px,2px 200%; 
     background-origin:padding-box;
     background-repeat:no-repeat;
@@ -62,13 +60,13 @@
   display: table;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:rgb(142, 171, 228);
-  background-color: rgba(19, 19, 56, 0.445);
+  background-color: rgba(19, 19, 56, 0);
   border-radius: 30px;
   font-size: 20px;
   color: rgba(142, 171, 228);
   border:15px solid transparent; 
   outline:2px solid #d39d1473; 
-  outline-offset:-10px; 
+  /* outline-offset:-10px; 
   background:
     linear-gradient(#d39d1473 0 0) top,
     linear-gradient(#d39d1473 0 0) left,
@@ -77,15 +75,16 @@
   background-size:200% 2px,2px 200%; 
   background-origin:padding-box;
   background-repeat:no-repeat;
-  flex-direction: column;
+  flex-direction: column; */
   
 }
 
 
 .row {
+  padding: 2px 2px;
   display: table-row;
   background: #2559839c;
-  outline: 0.5px solid #000000;
+  /* outline: 0.5px solid #000000; */
   
 }
 
@@ -103,16 +102,16 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:rgb(190, 206, 240);
   background-color: rgba(19, 19, 56, 0.473);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: 30px;
-  border:15px solid transparent; 
-  outline:2px solid #000; 
+  border:15px groove transparent; 
+  /* outline:2px solid #000;  */
   outline-offset:-10px; 
   background:
-    linear-gradient(#000 0 0) top,
-    linear-gradient(#d39e14 0 0) left,
-    linear-gradient(#d39e14 0 0) bottom,
-    linear-gradient(#000 0 0) right;
+    linear-gradient(#00000000 0 0) top,
+    linear-gradient(#d39d1494 0 0) left,
+    linear-gradient(#d39d1494 0 0) bottom,
+    linear-gradient(#00000000 0 0) right;
   background-size:200% 2px,2px 200%; 
   background-origin:padding-box;
   background-repeat:no-repeat;
@@ -120,22 +119,43 @@
 
 }
 
-.cell, .btn{
-  padding: 6px 12px;
+.cell {
+  padding: 6px 6px;
   display: table-cell;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:rgb(189, 207, 240);
   background-color: rgba(19, 19, 56, 0.445);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: 20px;
-  border:15px solid transparent; 
-  outline:2px solid #000000; 
+  border:15px groove transparent; 
+  outline:2px groove #00000000; 
   outline-offset:-10px; 
   background:
-    linear-gradient(#000 0 0) top,
-    linear-gradient(#d39e14 0 0) left,
-    linear-gradient(#000 0 0) bottom,
-    linear-gradient(#000 0 0) right;
+    linear-gradient(#00000000 0 0) top,
+    linear-gradient(#d39d1494 0 0) left,
+    linear-gradient(#d39d1494 0 0) bottom,
+    linear-gradient(#00000000 0 0) right;
+  background-size:200% 2px,2px 200%; 
+  background-origin:padding-box;
+  background-repeat:no-repeat;
+  flex-direction: column;
+}
+.btn {
+  padding: 2px 6px;
+  display: table-cell;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(189, 207, 240);
+  background-color: rgba(19, 19, 56, 0.445);
+  /* border-radius: 10px; */
+  font-size: 20px;
+  border:15px groove transparent; 
+  outline:2px groove #00000000; 
+  outline-offset:-10px; 
+  background:
+    linear-gradient(#00000000 0 0) top,
+    linear-gradient(#d39d1494 0 0) left,
+    linear-gradient(#d39d1494 0 0) bottom,
+    linear-gradient(#00000000 0 0) right;
   background-size:200% 2px,2px 200%; 
   background-origin:padding-box;
   background-repeat:no-repeat;
@@ -258,7 +278,7 @@
 }
 
 .wrap1 {
-  
+  margin-bottom: 40px;
 	perspective: 800px;
 	perspective-origin: 50% 100px;
   display: flex;
